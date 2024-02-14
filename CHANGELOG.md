@@ -1,3 +1,22 @@
+# v0.0.2 (Wed Feb 14 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: adjust the dependencies of the distributable (carlos3k11@gmail.com)
+- feat: implement the Nav component and its dependencies (carlos3k11@gmail.com)
+- refactor: remove unused dependencies (carlos3k11@gmail.com)
+- feat: implement the distribution of the type definition (carlos3k11@gmail.com)
+- feat(Storybook): disable telemetry and update documentation settings (carlos3k11@gmail.com)
+- feat: update component name in package.json (carlos3k11@gmail.com)
+- Initial commit ([@JanuarAsprilla](https://github.com/JanuarAsprilla))
+
+#### Authors: 2
+
+- Andres Babativa (carlos3k11@gmail.com)
+- Januar Asprilla  ([@JanuarAsprilla](https://github.com/JanuarAsprilla))
+
+---
+
 # v0.0.1 (Wed Jan 17 2024)
 
 #### ⚠️ Pushed to `main`
