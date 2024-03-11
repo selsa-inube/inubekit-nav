@@ -7,28 +7,28 @@ import { NavLink } from "@inubekit/navlink";
 
 import { StyledNav, StyledFooter, SeparatorLine } from "./styles";
 
-export interface INavLinkProps {
+interface INavLink {
   section: ILink[];
 }
 
-export interface ILink {
+interface ILink {
   id: string;
   label: string;
   icon: React.ReactNode;
   path: string;
 }
 
-export interface ISection {
+interface ISection {
   name: string;
   links: { [key: string]: ILink };
 }
 
-export interface INavigation {
+interface INavigation {
   title: string;
   sections: { [key: string]: ISection };
 }
 
-export interface INavProps {
+interface INav {
   navigation: INavigation;
   logoutPath: string;
   logoutTitle: string;
@@ -36,7 +36,7 @@ export interface INavProps {
 
 const year = new Date().getFullYear();
 
-const Links = (props: INavLinkProps) => {
+const Links = (props: INavLink) => {
   const { section } = props;
 
   const location = useLocation();
@@ -55,7 +55,7 @@ const Links = (props: INavLinkProps) => {
   return <>{LinkElements} </>;
 };
 
-const MultiSections = ({ navigation }: Pick<INavProps, "navigation">) => {
+const MultiSections = ({ navigation }: Pick<INav, "navigation">) => {
   const sections = Object.keys(navigation.sections);
 
   return (
@@ -87,7 +87,7 @@ const MultiSections = ({ navigation }: Pick<INavProps, "navigation">) => {
   );
 };
 
-const OneSection = ({ navigation }: Pick<INavProps, "navigation">) => {
+const OneSection = ({ navigation }: Pick<INav, "navigation">) => {
   const section = Object.keys(navigation.sections).join();
 
   return (
@@ -99,7 +99,7 @@ const OneSection = ({ navigation }: Pick<INavProps, "navigation">) => {
   );
 };
 
-const Nav = (props: INavProps) => {
+const Nav = (props: INav) => {
   const { navigation, logoutTitle, logoutPath } = props;
 
   return (
@@ -148,3 +148,4 @@ const Nav = (props: INavProps) => {
 };
 
 export { Nav };
+export type { INav, INavLink, ILink, ISection, INavigation };
