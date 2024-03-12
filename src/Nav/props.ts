@@ -1,4 +1,4 @@
-export const parameters = {
+const parameters = {
   layout: "fullscreen",
   docs: {
     description: {
@@ -8,7 +8,7 @@ export const parameters = {
   },
 };
 
-export const props = {
+const props = {
   navigation: {
     description:
       "The primary object that will organize and store the requisite paths for the correct operation of the Nav component is forthcoming and is required",
@@ -18,3 +18,5 @@ export const props = {
       "is the path where the user is going to navigate when he wants to logout and is required",
   },
 };
+
+export { parameters, props };

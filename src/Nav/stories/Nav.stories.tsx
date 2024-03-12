@@ -9,7 +9,7 @@ import {
   MdAccountBalanceWallet,
 } from "react-icons/md";
 
-import { Nav, INavProps } from "..";
+import { Nav, INav } from "..";
 
 import { props, parameters } from "../props";
 
@@ -27,7 +27,7 @@ const story = {
   ],
 };
 
-export const Default = (args: INavProps) => <Nav {...args} />;
+const Default = (args: INav) => <Nav {...args} />;
 
 Default.args = {
   navigation: {
@@ -97,4 +97,5 @@ Default.args = {
   logoutTitle: "logout",
 };
 
+export { Default };
 export default story;
