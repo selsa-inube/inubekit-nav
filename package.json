@@ -35,9 +35,10 @@
     "postversion": "git push --follow-tags && npm run auto release"
   },
   "dependencies": {
-    "@inubekit/navlink": "^1.0.1",
     "@inubekit/stack": "^1.1.0",
-    "@inubekit/text": "^1.3.0"
+    "@inubekit/text": "^1.3.0",
+    "@inubekit/grid": "^1.0.0",
+    "@inubekit/icon": "^1.1.0"
   },
   "peerDependencies": {
     "@inubekit/foundations": "^1.1.2",
