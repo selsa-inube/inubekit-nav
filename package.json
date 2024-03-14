@@ -10,7 +10,7 @@
   ],
   "description": "",
   "private": false,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "exports": {
     ".": {
@@ -32,7 +32,7 @@
     "auto": "auto",
     "changelog": "npm run auto changelog",
     "version": "rm -rf dist && npm run build",
-    "postversion": "git push --follow-tags && npm run auto release"
+    "release": "git push --follow-tags && npm run auto release"
   },
   "dependencies": {
     "@inubekit/stack": "^1.1.0",
