@@ -20,9 +20,10 @@ export default defineConfig({
         "react-icons",
         "react-router-dom",
         "@inubekit/foundations",
-        "@inubekit/navlink",
         "@inubekit/stack",
         "@inubekit/text",
+        "@inubekit/grid",
+        "@inubekit/icon",
       ],
       output: {
         globals: {

@@ -3,9 +3,9 @@ import { MdLogout } from "react-icons/md";
 
 import { Text } from "@inubekit/text";
 import { Stack } from "@inubekit/stack";
-import { NavLink } from "@inubekit/navlink";
 
 import { StyledNav, StyledFooter, SeparatorLine } from "./styles";
+import { NavLink } from "../NavLink";
 
 interface INavLink {
   section: ILink[];
