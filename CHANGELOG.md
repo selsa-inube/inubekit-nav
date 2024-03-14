@@ -1,3 +1,24 @@
+# v2.0.0 (Thu Mar 14 2024)
+
+#### 💥 Breaking Change
+
+- Move navlink component to nav repository [#3](https://github.com/selsa-inube/inubekit-nav/pull/3) ([@cmarin001](https://github.com/cmarin001))
+
+#### 🚀 Enhancement
+
+- Implement try..catch in props of type function [#2](https://github.com/selsa-inube/inubekit-nav/pull/2) ([@cmarin001](https://github.com/cmarin001))
+
+#### 🐛 Bug Fix
+
+- Adjust publish `Nav` in inubekit repo [#1](https://github.com/selsa-inube/inubekit-nav/pull/1) ([@Andresbl123](https://github.com/Andresbl123))
+
+#### Authors: 2
+
+- Andres ([@Andresbl123](https://github.com/Andresbl123))
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.0.2 (Wed Feb 14 2024)
 
 #### ⚠️ Pushed to `main`
