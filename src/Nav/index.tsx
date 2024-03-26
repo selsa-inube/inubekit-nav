@@ -7,7 +7,7 @@ import { Stack } from "@inubekit/stack";
 import { StyledNav, StyledFooter, SeparatorLine } from "./styles";
 import { NavLink } from "../NavLink";
 
-interface ILinkINavLink {
+interface INavLink {
   section: ILink[];
 }
 
@@ -18,25 +18,25 @@ interface ILink {
   path: string;
 }
 
-interface ILinkISection {
+interface INavSection {
   name: string;
   links: { [key: string]: ILink };
 }
 
-interface ILinkINavigation {
+interface INavNavigation {
   title: string;
-  sections: { [key: string]: ILinkISection };
+  sections: { [key: string]: INavSection };
 }
 
-interface ILinkINav {
-  navigation: ILinkINavigation;
+interface INav {
+  navigation: INavNavigation;
   logoutPath: string;
   logoutTitle: string;
 }
 
 const year = new Date().getFullYear();
 
-const Links = (props: ILinkINavLink) => {
+const Links = (props: INavLink) => {
   const { section } = props;
 
   const location = useLocation();
@@ -55,7 +55,7 @@ const Links = (props: ILinkINavLink) => {
   return <>{LinkElements} </>;
 };
 
-const MultiSections = ({ navigation }: Pick<ILinkINav, "navigation">) => {
+const MultiSections = ({ navigation }: INav) => {
   const sections = Object.keys(navigation.sections);
 
   return (
@@ -87,7 +87,7 @@ const MultiSections = ({ navigation }: Pick<ILinkINav, "navigation">) => {
   );
 };
 
-const OneSection = ({ navigation }: Pick<ILinkINav, "navigation">) => {
+const OneSection = ({ navigation }: INav) => {
   const section = Object.keys(navigation.sections).join();
 
   return (
@@ -99,7 +99,7 @@ const OneSection = ({ navigation }: Pick<ILinkINav, "navigation">) => {
   );
 };
 
-const Nav = (props: ILinkINav) => {
+const Nav = (props: INav) => {
   const { navigation, logoutTitle, logoutPath } = props;
 
   return (
@@ -117,9 +117,17 @@ const Nav = (props: ILinkINav) => {
             {navigation.title}
           </Text>
           {Object.keys(navigation.sections).length > 1 ? (
-            <MultiSections navigation={navigation} />
+            <MultiSections
+              navigation={navigation}
+              logoutPath={logoutPath}
+              logoutTitle={logoutTitle}
+            />
           ) : (
-            <OneSection navigation={navigation} />
+            <OneSection
+              navigation={navigation}
+              logoutPath={logoutPath}
+              logoutTitle={logoutTitle}
+            />
           )}
           <SeparatorLine />
           <NavLink
@@ -148,10 +156,4 @@ const Nav = (props: ILinkINav) => {
 };
 
 export { Nav };
-export type {
-  ILinkINav,
-  ILinkINavLink,
-  ILink,
-  ILinkISection,
-  ILinkINavigation,
-};
+export type { INav, INavLink, ILink, INavSection, INavNavigation };
