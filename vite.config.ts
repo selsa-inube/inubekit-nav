@@ -17,7 +17,7 @@ export default defineConfig({
         "react-dom",
         "styled-components",
         "react/jsx-runtime",
-        "react-icons",
+        "react-icons/md",
         "react-router-dom",
         "@inubekit/foundations",
         "@inubekit/stack",

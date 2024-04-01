@@ -18,18 +18,18 @@ interface ILink {
   path: string;
 }
 
-interface ISection {
+interface INavSection {
   name: string;
   links: { [key: string]: ILink };
 }
 
-interface INavigation {
+interface INavNavigation {
   title: string;
-  sections: { [key: string]: ISection };
+  sections: { [key: string]: INavSection };
 }
 
 interface INav {
-  navigation: INavigation;
+  navigation: INavNavigation;
   logoutPath: string;
   logoutTitle: string;
 }
@@ -55,7 +55,7 @@ const Links = (props: INavLink) => {
   return <>{LinkElements} </>;
 };
 
-const MultiSections = ({ navigation }: Pick<INav, "navigation">) => {
+const MultiSections = ({ navigation }: INav) => {
   const sections = Object.keys(navigation.sections);
 
   return (
@@ -87,7 +87,7 @@ const MultiSections = ({ navigation }: Pick<INav, "navigation">) => {
   );
 };
 
-const OneSection = ({ navigation }: Pick<INav, "navigation">) => {
+const OneSection = ({ navigation }: INav) => {
   const section = Object.keys(navigation.sections).join();
 
   return (
@@ -117,9 +117,17 @@ const Nav = (props: INav) => {
             {navigation.title}
           </Text>
           {Object.keys(navigation.sections).length > 1 ? (
-            <MultiSections navigation={navigation} />
+            <MultiSections
+              navigation={navigation}
+              logoutPath={logoutPath}
+              logoutTitle={logoutTitle}
+            />
           ) : (
-            <OneSection navigation={navigation} />
+            <OneSection
+              navigation={navigation}
+              logoutPath={logoutPath}
+              logoutTitle={logoutTitle}
+            />
           )}
           <SeparatorLine />
           <NavLink
@@ -148,4 +156,4 @@ const Nav = (props: INav) => {
 };
 
 export { Nav };
-export type { INav, INavLink, ILink, ISection, INavigation };
+export type { INav, INavLink, ILink, INavSection, INavNavigation };
