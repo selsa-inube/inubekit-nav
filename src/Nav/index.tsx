@@ -3,6 +3,7 @@ import { MdLogout } from "react-icons/md";
 
 import { Text } from "@inubekit/text";
 import { Stack } from "@inubekit/stack";
+import { inube } from "@inubekit/foundations";
 
 import { StyledNav, StyledFooter, SeparatorLine } from "./styles";
 import { NavLink } from "../NavLink";
@@ -69,7 +70,7 @@ const MultiSections = ({ navigation }: INav) => {
           <Text
             padding="16px"
             as="h2"
-            appearance="gray"
+            appearance={inube.nav.title.appearance as keyof typeof inube.text}
             type="title"
             size="small"
             textAlign="start"
@@ -109,7 +110,9 @@ const Nav = (props: INav) => {
           <Text
             padding="32px 16px 16px 16px"
             as="h2"
-            appearance="gray"
+            appearance={
+              inube.nav.subtitle.appearance.regular as keyof typeof inube.text
+            }
             type="title"
             size="small"
             textAlign="start"
@@ -142,7 +145,9 @@ const Nav = (props: INav) => {
             <Text
               type="label"
               size="medium"
-              appearance="gray"
+              appearance={
+                inube.nav.copyright.appearance as keyof typeof inube.text
+              }
               padding="24px"
               textAlign="start"
             >
