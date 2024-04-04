@@ -36,8 +36,8 @@ const NavLink = (props: INavLink) => {
       <StyledLink to={path} disabled={+disabled}>
         <Grid
           templateColumns={icon ? "auto 1fr auto" : "1fr auto"}
-          gap="s300"
-          padding="s0 s200"
+          gap="24px"
+          padding="0 16px"
           alignItems="center"
         >
           {icon && (
