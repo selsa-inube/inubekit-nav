@@ -36,8 +36,8 @@ const NavLink = (props: INavLink) => {
       <StyledLink to={path} disabled={+disabled}>
         <Grid
           templateColumns={icon ? "auto 1fr auto" : "1fr auto"}
-          gap="s300"
-          padding="s0 s200"
+          gap="24px"
+          padding="0 16px"
           alignItems="center"
         >
           {icon && (
@@ -49,13 +49,18 @@ const NavLink = (props: INavLink) => {
               parentHover={!disabled && true}
             />
           )}
-          <Text type="label" disabled={disabled} textAlign="start">
+          <Text
+            appearance={selected ? "primary" : "dark"}
+            type="label"
+            disabled={disabled}
+            textAlign="start"
+          >
             {label}
           </Text>
           {!disabled && selected && (
             <Icon
               icon={<MdKeyboardArrowRight />}
-              appearance="dark"
+              appearance={selected ? "primary" : "dark"}
               size="24px"
               parentHover={!disabled && true}
             />

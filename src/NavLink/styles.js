@@ -14,28 +14,25 @@ const StyledNavList = styled.li`
   border-left: ${({ disabled, selected, theme }) => {
     if (selected && !disabled) {
       return `5px solid ${
-        theme?.color?.stroke?.dark?.regular || inube.color.stroke.dark.regular
+        theme?.text?.primary?.content?.color?.regular ||
+        inube.text.primary.content.color.regular
       }`;
     }
-    return `0px`;
+    return `5px solid transparent`;
   }};
   background-color: ${({ selected, disabled, theme }) => {
     if (disabled) {
       return (
-        theme?.color?.surface?.navLink?.regular ||
-        inube.color.surface.navLink.regular
+        theme?.nav?.link?.background?.selected ||
+        inube.nav.link.background.selected
       );
     }
     if (selected && !disabled) {
       return (
-        theme?.color?.surface?.navLink?.selected ||
-        inube.color.surface.navLink.selected
+        theme?.nav?.link?.background?.selected ||
+        inube.nav.link.background.selected
       );
     }
-    return (
-      theme?.color?.surface?.navLink?.regular ||
-      inube.color.surface.navLink.regular
-    );
   }};
 
   ${({ disabled, theme }) =>
@@ -43,8 +40,7 @@ const StyledNavList = styled.li`
     `
       &:hover {
         background-color: ${
-          theme?.color?.surface?.navLink?.hover ||
-          inube.color.surface.navLink.hover
+          theme?.nav?.link?.background?.hover || inube.nav.link.background.hover
         };     
       }
   `};

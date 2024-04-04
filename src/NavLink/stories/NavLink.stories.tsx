@@ -1,8 +1,6 @@
-import { ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import { MdHouse } from "react-icons/md";
 
-import { presente } from "@inubekit/foundations";
 import { NavLinkController } from "./NavLink.Controller";
 import { props, parameters } from "../props";
 import { NavLink, INavLink } from "..";
@@ -31,17 +29,5 @@ Default.args = {
   icon: <MdHouse />,
 };
 
-const theme = structuredClone(presente);
-
-const Themed = (args: INavLink) => (
-  <ThemeProvider theme={theme}>
-    <NavLinkController {...args} selected />
-  </ThemeProvider>
-);
-
-Themed.args = {
-  ...Default.args,
-};
-
-export { Default, Themed };
+export { Default };
 export default story;
