@@ -10,7 +10,7 @@
   ],
   "description": "",
   "private": false,
-  "version": "2.0.0",
+  "version": "2.1.0",
   "type": "module",
   "exports": {
     ".": {
@@ -32,7 +32,12 @@
     "auto": "auto",
     "changelog": "npm run auto changelog",
     "version": "rm -rf dist && npm run build",
-    "release": "git push --follow-tags && npm run auto release"
+    "release": "git push --follow-tags && npm run auto release",
+    "autorelease": "auto shipit"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "dependencies": {
     "@inubekit/foundations": "^2.12.1",
@@ -78,5 +83,14 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selsa-inube/inubekit-nav.git"
+  },
+  "auto": {
+    "plugins": [
+      "npm"
+    ]
   }
 }
