@@ -11,11 +11,11 @@ const StyledNavList = styled.li`
   min-width: 180px;
   min-height: 40px;
   box-sizing: border-box;
-  border-left: ${({ disabled, selected, theme }) => {
-    if (selected && !disabled) {
+  border-left: ${({ appearance, disabled, theme }) => {
+    if (appearance && !disabled) {
       return `5px solid ${
-        theme?.text?.primary?.content?.color?.regular ||
-        inube.text.primary.content.color.regular
+        theme?.nav?.[appearance]?.content?.color?.regular ||
+        inube.text[appearance].content.color.regular
       }`;
     }
     return `5px solid transparent`;
