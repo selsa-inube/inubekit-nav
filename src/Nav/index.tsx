@@ -1,37 +1,25 @@
 import { useLocation } from "react-router-dom";
 import { MdLogout } from "react-icons/md";
 
-import { Text } from "@inubekit/text";
+import { ITextAppearance, Text } from "@inubekit/text";
 import { Stack } from "@inubekit/stack";
+import { inube } from "@inubekit/foundations";
 
 import { StyledNav, StyledFooter, SeparatorLine } from "./styles";
 import { NavLink } from "../NavLink";
+import { ILink, INavNavigation } from "./props";
 
-interface INavLink {
-  section: ILink[];
-}
-
-interface ILink {
-  id: string;
-  label: string;
-  icon: React.ReactNode;
-  path: string;
-}
-
-interface INavSection {
-  name: string;
-  links: { [key: string]: ILink };
-}
-
-interface INavNavigation {
-  title: string;
-  sections: { [key: string]: INavSection };
-}
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
 
 interface INav {
   navigation: INavNavigation;
   logoutPath: string;
   logoutTitle: string;
+}
+
+interface INavLink {
+  section: ILink[];
 }
 
 const year = new Date().getFullYear();
@@ -57,6 +45,10 @@ const Links = (props: INavLink) => {
 
 const MultiSections = ({ navigation }: INav) => {
   const sections = Object.keys(navigation.sections);
+  const theme: typeof inube = useContext(ThemeContext);
+  const navTitleAppearance =
+    (theme?.nav?.title?.appearance as ITextAppearance) ||
+    inube.nav.title.appearance;
 
   return (
     <Stack direction="column">
@@ -69,7 +61,7 @@ const MultiSections = ({ navigation }: INav) => {
           <Text
             padding="16px"
             as="h2"
-            appearance="gray"
+            appearance={navTitleAppearance}
             type="title"
             size="small"
             textAlign="start"
@@ -101,7 +93,13 @@ const OneSection = ({ navigation }: INav) => {
 
 const Nav = (props: INav) => {
   const { navigation, logoutTitle, logoutPath } = props;
-
+  const theme: typeof inube = useContext(ThemeContext);
+  const navSubtitleAppearance =
+    (theme?.nav?.subtitle?.appearance?.regular as ITextAppearance) ||
+    inube.nav.subtitle.appearance.regular;
+  const navCopyrightAppearance =
+    (theme?.nav?.copyright?.appearance as ITextAppearance) ||
+    inube.nav.copyright.appearance;
   return (
     <StyledNav>
       <Stack direction="column" justifyContent="space-between" height="100dvh">
@@ -109,7 +107,7 @@ const Nav = (props: INav) => {
           <Text
             padding="32px 16px 16px 16px"
             as="h2"
-            appearance="gray"
+            appearance={navSubtitleAppearance}
             type="title"
             size="small"
             textAlign="start"
@@ -142,7 +140,7 @@ const Nav = (props: INav) => {
             <Text
               type="label"
               size="medium"
-              appearance="gray"
+              appearance={navCopyrightAppearance}
               padding="24px"
               textAlign="start"
             >
@@ -156,4 +154,4 @@ const Nav = (props: INav) => {
 };
 
 export { Nav };
-export type { INav, INavLink, ILink, INavSection, INavNavigation };
+export type { INav };

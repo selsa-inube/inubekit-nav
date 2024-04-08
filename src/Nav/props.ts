@@ -1,3 +1,20 @@
+interface ILink {
+  id: string;
+  label: string;
+  icon: React.ReactNode;
+  path: string;
+}
+
+interface INavSection {
+  name: string;
+  links: { [key: string]: ILink };
+}
+
+interface INavNavigation {
+  title: string;
+  sections: { [key: string]: INavSection };
+}
+
 const parameters = {
   layout: "fullscreen",
   docs: {
@@ -20,3 +37,4 @@ const props = {
 };
 
 export { parameters, props };
+export type { ILink, INavSection, INavNavigation };

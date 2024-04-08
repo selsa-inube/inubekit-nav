@@ -5,11 +5,9 @@ const StyledNav = styled.div`
   width: 248px;
   box-sizing: border-box;
   background-color: ${({ theme }) =>
-    theme?.color?.surface?.nav?.regular || inube.color.surface.nav.regular};
+    theme?.nav?.background?.color || inube.nav.background.color};
   border-right: 1px solid
-    ${({ theme }) =>
-      theme?.color?.stroke?.divider?.regular ||
-      inube.color.stroke.divider.regular};
+    ${({ theme }) => theme?.nav?.divider?.color || inube.nav.divider.color};
 `;
 
 const StyledFooter = styled.footer`
@@ -18,15 +16,11 @@ const StyledFooter = styled.footer`
 
 const SeparatorLine = styled.div`
   width: calc(100% - 32px);
-  margin: ${({ theme }) =>
-    `${theme?.spacing?.s100 || inube.spacing.s100} ${
-      theme?.spacing?.s200 || inube.spacing.s200
-    }`};
+  margin: 8px 16px;
   height: 1px;
-  padding: ${({ theme }) => theme?.spacing?.s0 || inube.spacing.s0};
+  padding: 0px;
   background-color: ${({ theme }) =>
-    theme?.color?.stroke?.divider?.regular ||
-    inube.color.stroke.divider.regular};
+    theme?.nav?.divider?.color || inube.nav.divider.color};
 `;
 
 export { StyledNav, StyledFooter, SeparatorLine };

@@ -1,9 +1,12 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { Icon } from "@inubekit/icon";
+import { IIconAppearance, Icon } from "@inubekit/icon";
 import { Text } from "@inubekit/text";
 import { Grid } from "@inubekit/grid";
 
 import { StyledLink, StyledNavList } from "./styles";
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
+import { inube } from "@inubekit/foundations";
 
 interface INavLink {
   id: string;
@@ -26,11 +29,19 @@ const NavLink = (props: INavLink) => {
     onClick,
   } = props;
 
+  const theme: typeof inube = useContext(ThemeContext);
+
+  const selectedNavLinkAppearance =
+    (theme?.nav?.link?.appearance?.selected as IIconAppearance) ||
+    inube.nav.link.appearance.selected;
+  const regularNavLinkAppearance =
+    (theme?.nav?.link?.appearance?.regular as IIconAppearance) ||
+    inube.nav.link.appearance.regular;
   return (
     <StyledNavList
       id={id}
       disabled={disabled}
-      selected={selected}
+      appearance={selected ? selectedNavLinkAppearance : undefined}
       onClick={onClick}
     >
       <StyledLink to={path} disabled={+disabled}>
@@ -43,19 +54,30 @@ const NavLink = (props: INavLink) => {
           {icon && (
             <Icon
               icon={icon}
-              appearance={selected ? "primary" : "dark"}
+              appearance={
+                selected ? selectedNavLinkAppearance : regularNavLinkAppearance
+              }
               disabled={disabled}
               size="24px"
               parentHover={!disabled && true}
             />
           )}
-          <Text type="label" disabled={disabled} textAlign="start">
+          <Text
+            appearance={
+              selected ? selectedNavLinkAppearance : regularNavLinkAppearance
+            }
+            type="label"
+            disabled={disabled}
+            textAlign="start"
+          >
             {label}
           </Text>
           {!disabled && selected && (
             <Icon
               icon={<MdKeyboardArrowRight />}
-              appearance="dark"
+              appearance={
+                selected ? selectedNavLinkAppearance : regularNavLinkAppearance
+              }
               size="24px"
               parentHover={!disabled && true}
             />
