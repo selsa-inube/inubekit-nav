@@ -28,7 +28,6 @@ const Links = (props: INavLink) => {
   const { section } = props;
 
   const location = useLocation();
-  const currentUrl = location.pathname;
 
   const LinkElements = section.map((sectionObject) => (
     <NavLink
@@ -37,7 +36,7 @@ const Links = (props: INavLink) => {
       label={sectionObject.label}
       icon={sectionObject.icon}
       path={sectionObject.path}
-      selected={currentUrl.startsWith(sectionObject.path)}
+      selected={location.pathname === sectionObject.path}
     />
   ));
   return <>{LinkElements} </>;

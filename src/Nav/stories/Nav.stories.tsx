@@ -36,23 +36,23 @@ Default.args = {
       administrate: {
         name: "Administrate",
         links: {
-          privileges: {
-            id: "privileges",
-            label: "Privileges",
+          text: {
+            id: "text",
+            label: "Text",
             icon: <MdKey />,
-            path: "/privileges",
+            path: "/components/text",
           },
-          accounting: {
-            id: "accounting",
-            label: "Accounting",
+          textfield: {
+            id: "textfield",
+            label: "Textfield",
             icon: <MdMeetingRoom />,
-            path: "/accounting",
+            path: "/components/textfield",
           },
-          contacts: {
-            id: "contacts",
-            label: "Contacts",
+          textarea: {
+            id: "textarea",
+            label: "Textarea",
             icon: <MdPhone />,
-            path: "/contacts",
+            path: "/components/textarea",
           },
           crm: {
             id: "crm",
