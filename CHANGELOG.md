@@ -1,3 +1,15 @@
+# v4.0.0 (Thu May 16 2024)
+
+#### 💥 Breaking Change
+
+- Refactor `<Nav />` to make it collapsable [#11](https://github.com/selsa-inube/inubekit-nav/pull/11) ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v3.1.1 (Fri May 10 2024)
 
 #### 🐛 Bug Fix
