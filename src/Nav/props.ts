@@ -34,6 +34,14 @@ const props = {
     description:
       "is the path where the user is going to navigate when he wants to logout and is required",
   },
+  logoutTitle: {
+    description:
+      "is the title for the path where the user is going to navigate when he wants to logout and is required",
+  },
+  collapse: {
+    description:
+      "indicates if the component should be collapsible or not (by default is false)",
+  },
 };
 
 export { parameters, props };

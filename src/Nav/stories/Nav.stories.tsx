@@ -34,7 +34,7 @@ Default.args = {
     title: "MENU",
     sections: {
       administrate: {
-        name: "Administrate",
+        name: "ADMINISTRATE",
         links: {
           text: {
             id: "text",
@@ -63,7 +63,7 @@ Default.args = {
         },
       },
       request: {
-        name: "Request",
+        name: "REQUEST",
         links: {
           documents: {
             id: "documents",
@@ -95,6 +95,7 @@ Default.args = {
   },
   logoutPath: "/logout",
   logoutTitle: "logout",
+  collapse: true,
 };
 
 export { Default };

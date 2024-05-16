@@ -5,17 +5,26 @@ import { ITextAppearance, Text } from "@inubekit/text";
 import { Stack } from "@inubekit/stack";
 import { inube } from "@inubekit/foundations";
 
-import { StyledNav, StyledFooter, SeparatorLine } from "./styles";
+import {
+  StyledNav,
+  StyledFooter,
+  SeparatorLine,
+  StyledCollapseContainer,
+  StyledAnimatedWrapper,
+  StyledRotatingIcon,
+} from "./styles";
 import { NavLink } from "../NavLink";
 import { ILink, INavNavigation } from "./props";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "styled-components";
+import { Icon } from "@inubekit/icon";
 
 interface INav {
   navigation: INavNavigation;
   logoutPath: string;
   logoutTitle: string;
+  collapse?: boolean;
 }
 
 interface INavLink {
@@ -23,6 +32,11 @@ interface INavLink {
 }
 
 const year = new Date().getFullYear();
+
+const defaultAnimationValues = {
+  duration: 0.2,
+  ease: "ease-in-out",
+};
 
 const Links = (props: INavLink) => {
   const { section } = props;
@@ -42,38 +56,106 @@ const Links = (props: INavLink) => {
   return <>{LinkElements} </>;
 };
 
-const MultiSections = ({ navigation }: INav) => {
-  const sections = Object.keys(navigation.sections);
+const MultiSections = ({
+  navigation,
+  collapse,
+}: {
+  navigation: INavNavigation;
+  collapse: boolean;
+}) => {
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const theme: typeof inube = useContext(ThemeContext);
-  const navTitleAppearance =
-    (theme?.nav?.title?.appearance as ITextAppearance) ||
-    inube.nav.title.appearance;
+  const navRegularTitleAppearance =
+    (theme?.nav?.subtitle?.appearance?.regular as ITextAppearance) ||
+    inube.nav.subtitle.appearance.regular;
+  const navExpandedTitleAppearance =
+    (theme?.nav?.subtitle?.appearance?.expanded as ITextAppearance) ||
+    inube.nav.subtitle.appearance.expanded;
+
+  useEffect(() => {
+    if (collapse && Object.keys(navigation.sections).length > 0) {
+      setExpandedSection(
+        Object.keys(navigation.sections)[0].toLocaleUpperCase(),
+      );
+    }
+  }, [collapse, navigation.sections]);
+
+  const toggleSection = (sectionName: string) => {
+    setExpandedSection((prevSection) =>
+      prevSection === sectionName ? null : sectionName,
+    );
+  };
 
   return (
     <Stack direction="column">
-      {sections.map((section) => (
-        <Stack
-          key={navigation.sections[section].name}
-          direction="column"
-          justifyContent="center"
-        >
-          <Text
-            padding="16px"
-            as="h2"
-            appearance={navTitleAppearance}
-            type="title"
-            size="small"
-            textAlign="start"
+      {Object.keys(navigation.sections).map((section) => {
+        const isExpanded = collapse
+          ? expandedSection === navigation.sections[section].name
+          : true;
+
+        return (
+          <Stack
+            key={navigation.sections[section].name}
+            direction="column"
+            justifyContent="center"
           >
-            {navigation.sections[section].name}
-          </Text>
-          <Stack direction="column">
-            <Links
-              section={Object.values(navigation.sections[section].links)}
-            />
+            <StyledCollapseContainer
+              onClick={() =>
+                collapse && toggleSection(navigation.sections[section].name)
+              }
+              $collapse={collapse}
+              $expanded={isExpanded}
+            >
+              <Stack
+                direction="row"
+                alignItems="center"
+                padding="16px"
+                height="52px"
+                justifyContent={collapse ? "space-between" : "unset"}
+              >
+                <Text
+                  as="h2"
+                  appearance={
+                    collapse && isExpanded
+                      ? navExpandedTitleAppearance
+                      : navRegularTitleAppearance
+                  }
+                  type="title"
+                  size="small"
+                  textAlign="start"
+                >
+                  {navigation.sections[section].name}
+                </Text>
+                {collapse && (
+                  <Icon
+                    appearance={
+                      isExpanded
+                        ? navExpandedTitleAppearance
+                        : navRegularTitleAppearance
+                    }
+                    icon={
+                      <StyledRotatingIcon $expanded={isExpanded} size="20px" />
+                    }
+                  />
+                )}
+              </Stack>
+            </StyledCollapseContainer>
+
+            <StyledAnimatedWrapper
+              open={isExpanded}
+              animation={defaultAnimationValues}
+            >
+              {isExpanded && (
+                <Stack direction="column">
+                  <Links
+                    section={Object.values(navigation.sections[section].links)}
+                  />
+                </Stack>
+              )}
+            </StyledAnimatedWrapper>
           </Stack>
-        </Stack>
-      ))}
+        );
+      })}
     </Stack>
   );
 };
@@ -91,7 +173,7 @@ const OneSection = ({ navigation }: INav) => {
 };
 
 const Nav = (props: INav) => {
-  const { navigation, logoutTitle, logoutPath } = props;
+  const { navigation, logoutTitle, logoutPath, collapse = false } = props;
   const theme: typeof inube = useContext(ThemeContext);
   const navSubtitleAppearance =
     (theme?.nav?.subtitle?.appearance?.regular as ITextAppearance) ||
@@ -114,11 +196,7 @@ const Nav = (props: INav) => {
             {navigation.title}
           </Text>
           {Object.keys(navigation.sections).length > 1 ? (
-            <MultiSections
-              navigation={navigation}
-              logoutPath={logoutPath}
-              logoutTitle={logoutTitle}
-            />
+            <MultiSections navigation={navigation} collapse={collapse} />
           ) : (
             <OneSection
               navigation={navigation}
