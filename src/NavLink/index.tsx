@@ -42,6 +42,7 @@ const NavLink = (props: INavLink) => {
       id={id}
       disabled={disabled}
       appearance={selected ? selectedNavLinkAppearance : undefined}
+      selected={selected}
       onClick={onClick}
     >
       <StyledLink to={path} disabled={+disabled}>
