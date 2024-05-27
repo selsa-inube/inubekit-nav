@@ -1,3 +1,15 @@
+# v4.1.0 (Mon May 27 2024)
+
+#### 🚀 Enhancement
+
+- Update Dependencies to Latest Versions [#12](https://github.com/selsa-inube/inubekit-nav/pull/12) ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v4.0.0 (Thu May 16 2024)
 
 #### 💥 Breaking Change
