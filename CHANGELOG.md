@@ -1,3 +1,15 @@
+# v4.2.0 (Tue Jun 04 2024)
+
+#### 🚀 Enhancement
+
+- Update Navigation to Use HTML `<nav>` Tag for Semantics [#13](https://github.com/selsa-inube/inubekit-nav/pull/13) ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v4.1.0 (Mon May 27 2024)
 
 #### 🚀 Enhancement
