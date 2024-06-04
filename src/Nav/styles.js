@@ -33,7 +33,7 @@ const StyledFooter = styled.footer`
   width: 100%;
 `;
 
-const StyledNav = styled.div`
+const StyledNav = styled.nav`
   width: 248px;
   box-sizing: border-box;
   background-color: ${({ theme }) =>
