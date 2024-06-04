@@ -22,8 +22,8 @@ import { Icon } from "@inubekit/icon";
 
 interface INav {
   navigation: INavNavigation;
-  logoutPath: string;
-  logoutTitle: string;
+  logoutPath?: string;
+  logoutTitle?: string;
   collapse?: boolean;
 }
 
@@ -204,13 +204,17 @@ const Nav = (props: INav) => {
               logoutTitle={logoutTitle}
             />
           )}
-          <SeparatorLine />
-          <NavLink
-            id="logout"
-            label={logoutTitle}
-            icon={<MdLogout />}
-            path={logoutPath}
-          />
+          {logoutTitle && logoutPath && (
+            <>
+              <SeparatorLine />
+              <NavLink
+                id="logout"
+                label={logoutTitle}
+                icon={<MdLogout />}
+                path={logoutPath}
+              />
+            </>
+          )}
         </Stack>
         <StyledFooter>
           <Stack justifyContent="center">
