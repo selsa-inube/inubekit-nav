@@ -110,7 +110,7 @@ const MultiSections = ({
                 direction="row"
                 alignItems="center"
                 padding="16px"
-                height="52px"
+                height="20px"
                 justifyContent={collapse ? "space-between" : "unset"}
               >
                 <Text
