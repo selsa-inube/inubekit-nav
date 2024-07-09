@@ -123,6 +123,7 @@ const MultiSections = ({
                   type="title"
                   size="small"
                   textAlign="start"
+                  weight="bold"
                 >
                   {navigation.sections[section].name}
                 </Text>
@@ -192,6 +193,7 @@ const Nav = (props: INav) => {
             type="title"
             size="small"
             textAlign="start"
+            weight="bold"
           >
             {navigation.title}
           </Text>
@@ -224,6 +226,7 @@ const Nav = (props: INav) => {
               appearance={navCopyrightAppearance}
               padding="24px"
               textAlign="start"
+              weight="bold"
             >
               {year} - Inube
             </Text>
