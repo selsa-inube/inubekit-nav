@@ -70,6 +70,7 @@ const NavLink = (props: INavLink) => {
             type="label"
             disabled={disabled}
             textAlign="start"
+            weight="bold"
           >
             {label}
           </Text>
