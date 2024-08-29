@@ -43,7 +43,7 @@
     "@inubekit/foundations": "^5.9.0",
     "@inubekit/grid": "^2.3.0",
     "@inubekit/icon": "^2.11.0",
-    "@inubekit/stack": "^3.3.0",
+    "@inubekit/stack": "^3.5.0",
     "@inubekit/text": "^2.12.0"
   },
   "peerDependencies": {
