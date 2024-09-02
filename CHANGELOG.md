@@ -1,3 +1,15 @@
+# v4.25.1 (Mon Sep 02 2024)
+
+#### ⚠️ Pushed to `main`
+
+- Update package.json ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v4.25.0 (Mon Sep 02 2024)
 
 #### 🚀 Enhancement
