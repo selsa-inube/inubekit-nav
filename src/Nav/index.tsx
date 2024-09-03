@@ -12,7 +12,7 @@ import {
   StyledCollapseContainer,
   StyledAnimatedWrapper,
   StyledRotatingIcon,
-  FooterLogoImage,
+  StyledFooterLogoImage,
 } from "./styles";
 import { NavLink } from "../NavLink";
 import { ILink, INavNavigation } from "./props";
@@ -231,7 +231,7 @@ const Nav = (props: INav) => {
         <StyledFooter>
           <Stack justifyContent="center" alignItems="center">
             {footerLogo ? (
-              <FooterLogoImage src={footerLogo} alt="Footer Logo" />
+              <StyledFooterLogoImage src={footerLogo} alt="Footer Logo" />
             ) : (
               <Text
                 type="label"

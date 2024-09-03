@@ -48,7 +48,7 @@ const StyledRotatingIcon = styled(MdKeyboardArrowDown)`
     $expanded ? "rotate(180deg)" : "rotate(0deg)"};
 `;
 
-const FooterLogoImage = styled.img`
+const StyledFooterLogoImage = styled.img`
   width: 124px;
   height: auto;
   display: block;
@@ -59,7 +59,7 @@ export {
   StyledAnimatedWrapper,
   StyledCollapseContainer,
   StyledFooter,
+  StyledFooterLogoImage,
   StyledNav,
   StyledRotatingIcon,
-  FooterLogoImage,
 };
