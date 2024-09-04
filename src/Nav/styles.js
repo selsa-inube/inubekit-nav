@@ -52,7 +52,7 @@ const StyledFooterLogoImage = styled.img`
   width: 124px;
   height: auto;
   display: block;
-  padding: 24px;
+  padding: 24px 62px;
 `;
 
 export {
