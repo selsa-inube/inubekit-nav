@@ -231,7 +231,7 @@ const Nav = (props: INav) => {
         <StyledFooter>
           <Stack justifyContent="center" alignItems="center">
             {footerLogo ? (
-              <StyledFooterLogoImage src={footerLogo} alt="Footer Logo" />
+              <StyledFooterLogoImage src={footerLogo} alt="" />
             ) : (
               <Text
                 type="label"
