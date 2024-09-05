@@ -48,11 +48,19 @@ const StyledRotatingIcon = styled(MdKeyboardArrowDown)`
     $expanded ? "rotate(180deg)" : "rotate(0deg)"};
 `;
 
+const StyledFooterLogoImage = styled.img`
+  width: 124px;
+  height: auto;
+  display: block;
+  padding: 24px 62px;
+`;
+
 export {
   SeparatorLine,
   StyledAnimatedWrapper,
   StyledCollapseContainer,
   StyledFooter,
+  StyledFooterLogoImage,
   StyledNav,
   StyledRotatingIcon,
 };

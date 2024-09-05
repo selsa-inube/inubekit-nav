@@ -12,6 +12,7 @@ import {
   StyledCollapseContainer,
   StyledAnimatedWrapper,
   StyledRotatingIcon,
+  StyledFooterLogoImage,
 } from "./styles";
 import { NavLink } from "../NavLink";
 import { ILink, INavNavigation } from "./props";
@@ -25,6 +26,8 @@ interface INav {
   logoutPath?: string;
   logoutTitle?: string;
   collapse?: boolean;
+  footerLabel?: string;
+  footerLogo?: string;
 }
 
 interface INavLink {
@@ -53,7 +56,7 @@ const Links = (props: INavLink) => {
       selected={location.pathname === sectionObject.path}
     />
   ));
-  return <>{LinkElements} </>;
+  return <>{LinkElements}</>;
 };
 
 const MultiSections = ({
@@ -174,7 +177,14 @@ const OneSection = ({ navigation }: INav) => {
 };
 
 const Nav = (props: INav) => {
-  const { navigation, logoutTitle, logoutPath, collapse = false } = props;
+  const {
+    navigation,
+    logoutTitle,
+    logoutPath,
+    collapse = false,
+    footerLabel = `inube - ${year}`,
+    footerLogo,
+  } = props;
   const theme: typeof inube = useContext(ThemeContext);
   const navSubtitleAppearance =
     (theme?.nav?.subtitle?.appearance?.regular as ITextAppearance) ||
@@ -219,17 +229,21 @@ const Nav = (props: INav) => {
           )}
         </Stack>
         <StyledFooter>
-          <Stack justifyContent="center">
-            <Text
-              type="label"
-              size="medium"
-              appearance={navCopyrightAppearance}
-              padding="24px"
-              textAlign="start"
-              weight="bold"
-            >
-              {year} - Inube
-            </Text>
+          <Stack justifyContent="center" alignItems="center">
+            {footerLogo ? (
+              <StyledFooterLogoImage src={footerLogo} alt="" />
+            ) : (
+              <Text
+                type="label"
+                size="medium"
+                appearance={navCopyrightAppearance}
+                padding="24px"
+                textAlign="start"
+                weight="bold"
+              >
+                {footerLabel}
+              </Text>
+            )}
           </Stack>
         </StyledFooter>
       </Stack>
