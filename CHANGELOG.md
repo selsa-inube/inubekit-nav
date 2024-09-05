@@ -1,3 +1,15 @@
+# v4.33.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- Enhance `<Nav />` Component with `footerLabel` and `footerLogo` Props [#49](https://github.com/selsa-inube/inubekit-nav/pull/49) ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v4.32.0 (Wed Sep 04 2024)
 
 #### 🚀 Enhancement
