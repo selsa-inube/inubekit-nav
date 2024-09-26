@@ -1,3 +1,15 @@
+# v4.36.0 (Thu Sep 26 2024)
+
+#### 🚀 Enhancement
+
+- Move nav tokens from foundations to component [#53](https://github.com/selsa-inube/inubekit-nav/pull/53) ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v4.35.0 (Wed Sep 25 2024)
 
 #### 🚀 Enhancement
