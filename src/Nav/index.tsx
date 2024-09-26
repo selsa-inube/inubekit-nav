@@ -3,7 +3,6 @@ import { MdLogout } from "react-icons/md";
 
 import { ITextAppearance, Text } from "@inubekit/text";
 import { Stack } from "@inubekit/stack";
-import { inube } from "@inubekit/foundations";
 
 import {
   StyledNav,
@@ -16,10 +15,10 @@ import {
 } from "./styles";
 import { NavLink } from "../NavLink";
 import { ILink, INavNavigation } from "./props";
-
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "styled-components";
 import { Icon } from "@inubekit/icon";
+import { tokens } from "./Tokens/tokens";
 
 interface INav {
   navigation: INavNavigation;
@@ -67,13 +66,13 @@ const MultiSections = ({
   collapse: boolean;
 }) => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
-  const theme: typeof inube = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) as { nav: typeof tokens };
   const navRegularTitleAppearance =
     (theme?.nav?.subtitle?.appearance?.regular as ITextAppearance) ||
-    inube.nav.subtitle.appearance.regular;
+    tokens.subtitle.appearance.regular;
   const navExpandedTitleAppearance =
     (theme?.nav?.subtitle?.appearance?.expanded as ITextAppearance) ||
-    inube.nav.subtitle.appearance.expanded;
+    tokens.subtitle.appearance.expanded;
 
   useEffect(() => {
     if (collapse && Object.keys(navigation.sections).length > 0) {
@@ -185,13 +184,13 @@ const Nav = (props: INav) => {
     footerLabel = `inube - ${year}`,
     footerLogo,
   } = props;
-  const theme: typeof inube = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) as { nav: typeof tokens };
   const navSubtitleAppearance =
     (theme?.nav?.subtitle?.appearance?.regular as ITextAppearance) ||
-    inube.nav.subtitle.appearance.regular;
+    tokens.subtitle.appearance.regular;
   const navCopyrightAppearance =
     (theme?.nav?.copyright?.appearance as ITextAppearance) ||
-    inube.nav.copyright.appearance;
+    tokens.copyright.appearance;
   return (
     <StyledNav>
       <Stack direction="column" justifyContent="space-between" height="100dvh">

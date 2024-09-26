@@ -6,7 +6,7 @@ import { Grid } from "@inubekit/grid";
 import { StyledLink, StyledNavList } from "./styles";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
-import { inube } from "@inubekit/foundations";
+import { tokens } from "../Nav/Tokens/tokens";
 
 interface INavLink {
   id: string;
@@ -29,14 +29,14 @@ const NavLink = (props: INavLink) => {
     onClick,
   } = props;
 
-  const theme: typeof inube = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) as { nav: typeof tokens };
 
   const selectedNavLinkAppearance =
     (theme?.nav?.link?.appearance?.selected as IIconAppearance) ||
-    inube.nav.link.appearance.selected;
+    tokens.link.appearance.selected;
   const regularNavLinkAppearance =
     (theme?.nav?.link?.appearance?.regular as IIconAppearance) ||
-    inube.nav.link.appearance.regular;
+    tokens.link.appearance.regular;
   return (
     <StyledNavList
       id={id}
