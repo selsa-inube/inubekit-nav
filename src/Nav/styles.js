@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { inube } from "@inubekit/foundations";
+import { tokens } from "./Tokens/tokens";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 const SeparatorLine = styled.div`
@@ -8,7 +8,7 @@ const SeparatorLine = styled.div`
   height: 1px;
   padding: 0px;
   background-color: ${({ theme }) =>
-    theme?.nav?.divider?.color || inube.nav.divider.color};
+    theme?.nav?.divider?.color || tokens.divider.color};
 `;
 
 const StyledAnimatedWrapper = styled.div`
@@ -24,8 +24,8 @@ const StyledCollapseContainer = styled.div`
     background-color: ${({ theme, $collapse, $expanded }) =>
       $collapse && $expanded
         ? theme?.nav?.subtitle?.background?.expanded ||
-          inube.nav.subtitle.background.expanded
-        : theme?.nav?.background?.color || inube.nav.background.color};
+          tokens.subtitle.background.expanded
+        : theme?.nav?.background?.color || tokens.background.color};
   }
 `;
 
@@ -37,9 +37,9 @@ const StyledNav = styled.nav`
   width: 248px;
   box-sizing: border-box;
   background-color: ${({ theme }) =>
-    theme?.nav?.background?.color || inube.nav.background.color};
+    theme?.nav?.background?.color || tokens.background.color};
   border-right: 1px solid
-    ${({ theme }) => theme?.nav?.divider?.color || inube.nav.divider.color};
+    ${({ theme }) => theme?.nav?.divider?.color || tokens.divider.color};
 `;
 
 const StyledRotatingIcon = styled(MdKeyboardArrowDown)`

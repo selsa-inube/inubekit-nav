@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
-import { inube } from "@inubekit/foundations";
+import { TextTokens } from "@inubekit/text";
+import { tokens } from "../Nav/Tokens/tokens";
 
 const StyledNavList = styled.li`
   display: flex;
@@ -14,8 +14,8 @@ const StyledNavList = styled.li`
   border-left: ${({ appearance, disabled, theme }) => {
     if (appearance && !disabled) {
       return `5px solid ${
-        theme?.nav?.[appearance]?.content?.color?.regular ||
-        inube.text[appearance].content.color.regular
+        theme?.text?.[appearance]?.content?.color?.hover ||
+        TextTokens[appearance].content.color.hover
       }`;
     }
     return `5px solid transparent`;
@@ -24,13 +24,13 @@ const StyledNavList = styled.li`
     if (disabled) {
       return (
         theme?.nav?.link?.background?.selected ||
-        inube.nav.link.background.selected
+        tokens.link.background.selected
       );
     }
     if (selected && !disabled) {
       return (
         theme?.nav?.link?.background?.selected ||
-        inube.nav.link.background.selected
+        tokens.link.background.selected
       );
     }
   }};
@@ -40,7 +40,7 @@ const StyledNavList = styled.li`
     `
       &:hover {
         background-color: ${
-          theme?.nav?.link?.background?.hover || inube.nav.link.background.hover
+          theme?.nav?.link?.background?.hover || tokens.link.background.hover
         };     
       }
   `};
