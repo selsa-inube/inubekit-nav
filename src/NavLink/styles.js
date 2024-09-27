@@ -14,8 +14,8 @@ const StyledNavList = styled.li`
   border-left: ${({ appearance, disabled, theme }) => {
     if (appearance && !disabled) {
       return `5px solid ${
-        theme?.text?.[appearance]?.content?.color?.hover ||
-        TextTokens[appearance].content.color.hover
+        theme?.text?.[appearance]?.content?.color?.regular ||
+        TextTokens[appearance].content.color.regular
       }`;
     }
     return `5px solid transparent`;

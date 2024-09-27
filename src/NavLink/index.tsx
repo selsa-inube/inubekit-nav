@@ -60,7 +60,6 @@ const NavLink = (props: INavLink) => {
               }
               disabled={disabled}
               size="24px"
-              parentHover={!disabled && true}
             />
           )}
           <Text
@@ -81,7 +80,6 @@ const NavLink = (props: INavLink) => {
                 selected ? selectedNavLinkAppearance : regularNavLinkAppearance
               }
               size="24px"
-              parentHover={!disabled && true}
             />
           )}
         </Grid>
