@@ -1,3 +1,15 @@
+# v4.36.1 (Fri Sep 27 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: remove unncessary code ir order to follow design provided by figma ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v4.36.0 (Thu Sep 26 2024)
 
 #### 🚀 Enhancement
