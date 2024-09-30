@@ -40,12 +40,12 @@ const NavLink = (props: INavLink) => {
   return (
     <StyledNavList
       id={id}
-      disabled={disabled}
-      appearance={selected ? selectedNavLinkAppearance : undefined}
-      selected={selected}
+      $disabled={disabled}
+      $appearance={selected ? selectedNavLinkAppearance : undefined}
+      $selected={selected}
       onClick={onClick}
     >
-      <StyledLink to={path} disabled={+disabled}>
+      <StyledLink to={path} $disabled={+disabled}>
         <Grid
           templateColumns={icon ? "auto 1fr auto" : "1fr auto"}
           gap="24px"

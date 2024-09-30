@@ -13,8 +13,8 @@ const SeparatorLine = styled.div`
 
 const StyledAnimatedWrapper = styled.div`
   opacity: 0;
-  transition: all ${(props) => props.animation.duration}s
-    ${(props) => props.animation.ease};
+  transition: all ${(props) => props.$animation.duration}s
+    ${(props) => props.$animation.ease};
   opacity: ${(props) => (props.open ? 1 : 0)};
 `;
 

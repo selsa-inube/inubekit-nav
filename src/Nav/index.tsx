@@ -146,7 +146,7 @@ const MultiSections = ({
 
             <StyledAnimatedWrapper
               open={isExpanded}
-              animation={defaultAnimationValues}
+              $animation={defaultAnimationValues}
             >
               {isExpanded && (
                 <Stack direction="column">

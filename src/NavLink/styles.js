@@ -11,23 +11,23 @@ const StyledNavList = styled.li`
   min-width: 180px;
   min-height: 40px;
   box-sizing: border-box;
-  border-left: ${({ appearance, disabled, theme }) => {
-    if (appearance && !disabled) {
+  border-left: ${({ $appearance, $disabled, theme }) => {
+    if ($appearance && !$disabled) {
       return `5px solid ${
-        theme?.text?.[appearance]?.content?.color?.regular ||
-        TextTokens[appearance].content.color.regular
+        theme?.text?.[$appearance]?.content?.color?.regular ||
+        TextTokens[$appearance].content.color.regular
       }`;
     }
     return `5px solid transparent`;
   }};
-  background-color: ${({ selected, disabled, theme }) => {
-    if (disabled) {
+  background-color: ${({ $selected, $disabled, theme }) => {
+    if ($disabled) {
       return (
         theme?.nav?.link?.background?.selected ||
         tokens.link.background.selected
       );
     }
-    if (selected && !disabled) {
+    if ($selected && !$disabled) {
       return (
         theme?.nav?.link?.background?.selected ||
         tokens.link.background.selected
@@ -35,8 +35,8 @@ const StyledNavList = styled.li`
     }
   }};
 
-  ${({ disabled, theme }) =>
-    !disabled &&
+  ${({ $disabled, theme }) =>
+    !$disabled &&
     `
       &:hover {
         background-color: ${
@@ -50,7 +50,7 @@ const StyledLink = styled(Link)`
   box-sizing: border-box;
   text-decoration: none;
   width: 100%;
-  cursor: ${({ disabled }) => disabled && "not-allowed"};
+  cursor: ${({ $disabled }) => $disabled && "not-allowed"};
 `;
 
 export { StyledNavList, StyledLink };
