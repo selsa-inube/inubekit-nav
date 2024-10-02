@@ -40,6 +40,9 @@ const StyledNav = styled.nav`
     theme?.nav?.background?.color || tokens.background.color};
   border-right: 1px solid
     ${({ theme }) => theme?.nav?.divider?.color || tokens.divider.color};
+  & > div > div > li {
+    cursor: pointer;
+  }
 `;
 
 const StyledRotatingIcon = styled(MdKeyboardArrowDown)`

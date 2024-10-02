@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import { MdLogout } from "react-icons/md";
 
 import { ITextAppearance, Text } from "@inubekit/text";
 import { Stack } from "@inubekit/stack";
@@ -20,10 +19,16 @@ import { ThemeContext } from "styled-components";
 import { Icon } from "@inubekit/icon";
 import { tokens } from "./Tokens/tokens";
 
+interface INavAction {
+  id: string;
+  label: string;
+  icon?: React.ReactNode;
+  action: () => void;
+}
+
 interface INav {
   navigation: INavNavigation;
-  logoutPath?: string;
-  logoutTitle?: string;
+  actions?: INavAction[];
   collapse?: boolean;
   footerLabel?: string;
   footerLogo?: string;
@@ -178,8 +183,7 @@ const OneSection = ({ navigation }: INav) => {
 const Nav = (props: INav) => {
   const {
     navigation,
-    logoutTitle,
-    logoutPath,
+    actions,
     collapse = false,
     footerLabel = `inube - ${year}`,
     footerLogo,
@@ -209,21 +213,20 @@ const Nav = (props: INav) => {
           {Object.keys(navigation.sections).length > 1 ? (
             <MultiSections navigation={navigation} collapse={collapse} />
           ) : (
-            <OneSection
-              navigation={navigation}
-              logoutPath={logoutPath}
-              logoutTitle={logoutTitle}
-            />
+            <OneSection navigation={navigation} />
           )}
-          {logoutTitle && logoutPath && (
+          {actions && actions.length > 0 && (
             <>
               <SeparatorLine />
-              <NavLink
-                id="logout"
-                label={logoutTitle}
-                icon={<MdLogout />}
-                path={logoutPath}
-              />
+              {actions.map(({ id, label, icon, action }) => (
+                <NavLink
+                  key={id}
+                  id={id}
+                  label={label}
+                  icon={icon}
+                  onClick={action}
+                />
+              ))}
             </>
           )}
         </Stack>
@@ -251,4 +254,4 @@ const Nav = (props: INav) => {
 };
 
 export { Nav };
-export type { INav };
+export type { INav, INavAction };

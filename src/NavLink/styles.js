@@ -53,4 +53,10 @@ const StyledLink = styled(Link)`
   cursor: ${({ $disabled }) => $disabled && "not-allowed"};
 `;
 
-export { StyledNavList, StyledLink };
+const StyledAction = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+  cursor: ${({ $disabled }) => $disabled && "not-allowed"};
+`;
+
+export { StyledAction, StyledNavList, StyledLink };
