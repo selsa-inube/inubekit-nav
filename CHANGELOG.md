@@ -1,3 +1,15 @@
+# v5.0.0 (Wed Oct 02 2024)
+
+#### 💥 Breaking Change
+
+- Refactor `<NavLink/>` component to improve reusability and error handling [#58](https://github.com/selsa-inube/inubekit-nav/pull/58) ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v4.40.0 (Tue Oct 01 2024)
 
 #### 🚀 Enhancement
