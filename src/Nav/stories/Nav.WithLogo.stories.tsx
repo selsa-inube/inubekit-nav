@@ -7,6 +7,7 @@ import {
   MdStarBorder,
   MdAccountBalance,
   MdAccountBalanceWallet,
+  MdLogout,
 } from "react-icons/md";
 
 import { Nav, INav } from "..";
@@ -93,8 +94,20 @@ WithFooterProps.args = {
       },
     },
   },
-  logoutPath: "/logout",
-  logoutTitle: "logout",
+  actions: [
+    {
+      id: "action1",
+      label: "Action 1",
+      icon: <MdLogout />,
+      action: () => console.log("Action 1 triggered"),
+    },
+    {
+      id: "action2",
+      label: "Action 2",
+      icon: <MdLogout />,
+      action: () => console.log("Action 2 triggered"),
+    },
+  ],
   collapse: true,
   footerLogo: "https://i.imgur.com/YYrs6cF.png",
 };
