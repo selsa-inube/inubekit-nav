@@ -197,7 +197,7 @@ const Nav = (props: INav) => {
     tokens.copyright.appearance;
   return (
     <StyledNav>
-      <Stack direction="column" justifyContent="space-between" height="100dvh">
+      <Stack direction="column" justifyContent="space-between" height="inherit">
         <Stack direction="column">
           <Text
             padding="32px 16px 16px 16px"
