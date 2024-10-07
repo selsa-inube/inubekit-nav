@@ -40,6 +40,7 @@ const StyledNav = styled.nav`
     theme?.nav?.background?.color || tokens.background.color};
   border-right: 1px solid
     ${({ theme }) => theme?.nav?.divider?.color || tokens.divider.color};
+  height: inherit;
   & > div > div > li {
     cursor: pointer;
   }
