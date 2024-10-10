@@ -1,3 +1,15 @@
+# v5.2.1 (Thu Oct 10 2024)
+
+#### ⚠️ Pushed to `main`
+
+- Update index.ts ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v5.2.0 (Thu Oct 10 2024)
 
 #### 🚀 Enhancement
