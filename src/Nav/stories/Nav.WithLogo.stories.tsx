@@ -22,7 +22,16 @@ const story = {
   decorators: [
     (Story: React.ElementType) => (
       <BrowserRouter>
-        <Story />
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "auto 1fr",
+            height: "100vh",
+            overflow: "hidden",
+          }}
+        >
+          <Story />
+        </div>
       </BrowserRouter>
     ),
   ],
@@ -109,7 +118,8 @@ WithFooterProps.args = {
     },
   ],
   collapse: true,
-  footerLogo: "https://i.imgur.com/YYrs6cF.png",
+  footerLogo:
+    "https://res.cloudinary.com/wfercanas/image/upload/v1729119253/linpar/selsa_jybzim.png",
 };
 
 export { WithFooterProps };

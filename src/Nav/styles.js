@@ -35,12 +35,16 @@ const StyledFooter = styled.footer`
 
 const StyledNav = styled.nav`
   width: 248px;
-  box-sizing: border-box;
   background-color: ${({ theme }) =>
     theme?.nav?.background?.color || tokens.background.color};
   border-right: 1px solid
     ${({ theme }) => theme?.nav?.divider?.color || tokens.divider.color};
   height: inherit;
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-gutter: auto;
+
   & > div > div > li {
     cursor: pointer;
   }
