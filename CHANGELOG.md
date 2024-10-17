@@ -1,3 +1,15 @@
+# v5.3.1 (Thu Oct 17 2024)
+
+#### 🐛 Bug Fix
+
+- fix: add scroll-y behavior of nav [#62](https://github.com/selsa-inube/inubekit-nav/pull/62) ([@wfercanas](https://github.com/wfercanas))
+
+#### Authors: 1
+
+- Fernando Cañas ([@wfercanas](https://github.com/wfercanas))
+
+---
+
 # v5.3.0 (Thu Oct 10 2024)
 
 #### 🚀 Enhancement
