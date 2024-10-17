@@ -22,7 +22,16 @@ const story = {
   decorators: [
     (Story: React.ElementType) => (
       <BrowserRouter>
-        <Story />
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "auto 1fr",
+            height: "100vh",
+            overflow: "hidden",
+          }}
+        >
+          <Story />
+        </div>
       </BrowserRouter>
     ),
   ],
